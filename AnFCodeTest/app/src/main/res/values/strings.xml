@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">AnFCodeTest</string>
+    <string name="background_image_for_card">background image for card</string>
+    <string name="top_description">Top Description</string>
+  <string name="title">Title</string>
+  <string name="promo_message">Promo Message</string>
+  <string name="bottom_description">Bottom Description</string>
+  <string name="bottom_button">Bottom Button</string>
+  <string name="top_button">Top Button</string>
+</resources>

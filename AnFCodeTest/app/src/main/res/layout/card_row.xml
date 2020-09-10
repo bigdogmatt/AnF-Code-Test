@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:contentDescription="@string/background_image_for_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="VectorDrawableCompat"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/topDescription"
+        style="@style/topDescriptionStyle"
+        android:fontFamily="@font/abhaya_libre_semibold"
+        android:text="@string/top_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardImage" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/titleStyle"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topDescription" />
+
+    <TextView
+        android:id="@+id/promoMessage"
+        style="@style/promoMessageStyle"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/promo_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/bottomDescription"
+        style="@style/bottomDescriptionStyle"
+        android:fontFamily="@font/abhaya_libre"
+        android:text="@string/bottom_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/promoMessage" />
+
+    <Button
+        android:id="@+id/topButton"
+        style="@style/buttonStyle"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/top_button"
+        app:layout_constraintBottom_toTopOf="@+id/bottomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomDescription" />
+
+    <Button
+        android:id="@+id/bottomButton"
+        style="@style/buttonStyle"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/bottom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

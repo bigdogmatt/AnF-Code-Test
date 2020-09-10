@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="largeMargin">20dp</dimen>
+    <dimen name="smallMargin">6dp</dimen>
+    <dimen name="letterSpacingMed">0.10</dimen>
+    <dimen name="letterSpacingLarge">0.20</dimen>
+</resources>
