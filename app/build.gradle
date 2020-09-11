@@ -29,18 +29,21 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //Third party libraries
     implementation("com.squareup.okhttp3:okhttp:4.8.1")
     implementation ("com.google.code.gson:gson:2.8.6")
-    implementation ("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.+")
+    implementation ("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9")
     implementation 'com.squareup.picasso:picasso:2.71828'
-    repositories { jcenter() }
-    dependencies { testImplementation "org.mockito:mockito-core:3.5.10" }
+    testImplementation "org.mockito:mockito-core:3.5.10"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
 
 }

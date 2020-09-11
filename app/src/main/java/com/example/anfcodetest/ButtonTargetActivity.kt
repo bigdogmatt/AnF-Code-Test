@@ -1,13 +1,20 @@
 package com.example.anfcodetest
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
+import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.button_web_view.*
+import kotlinx.android.synthetic.main.card_row.*
+import kotlinx.android.synthetic.main.card_row.view.*
 
 class ButtonTargetActivity : AppCompatActivity() {
 
@@ -22,13 +29,12 @@ class ButtonTargetActivity : AppCompatActivity() {
         supportActionBar?.title = navBarTitle
 
         //Get target link and load
+
         val targetLink = intent.getStringExtra("target")
         if (targetLink != null) {
-//            if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                web_view_button_target.settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-//            }
             web_view_button_target.loadUrl(targetLink)
             web_view_button_target.webViewClient = WebViewClient()
         }
+
     }
 }
