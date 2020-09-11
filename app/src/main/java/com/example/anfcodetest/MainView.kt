@@ -1,11 +1,6 @@
 package com.example.anfcodetest
 
-import android.content.Intent
-import android.text.Html
-import android.text.method.LinkMovementMethod
 import android.view.View
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.card_row.view.*
 
 interface MainView {
 
