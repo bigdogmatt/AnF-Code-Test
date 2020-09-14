@@ -11,7 +11,7 @@ interface MainContract {
 
     interface Presenter : MvpPresenter<View> {
 
-        fun cardSetup(holder: CustomViewHolder, position: Int,cardList: List<Card>?)
+        fun cardSetup(holder: CustomViewHolder, position: Int,cardList: List<Card>)
 
     }
 }

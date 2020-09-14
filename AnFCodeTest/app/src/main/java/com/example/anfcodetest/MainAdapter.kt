@@ -15,13 +15,10 @@ import kotlinx.android.synthetic.main.card_row.view.*
  * Created by Matt Kleman 09/04/20
  */
 
-class MainAdapter(val cardList: List<Card>?): RecyclerView.Adapter<CustomViewHolder>() {
+class MainAdapter(val cardList: List<Card>): RecyclerView.Adapter<CustomViewHolder>() {
 
     override fun getItemCount(): Int {
-        if (cardList != null) {
-            return cardList.count()
-        }
-        return 0
+        return cardList.count()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
