@@ -42,5 +42,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     repositories { jcenter() }
     dependencies { testImplementation "org.mockito:mockito-core:3.5.10" }
-
+    implementation 'com.hannesdorfmann.mosby3:mvp:3.1.1' // Plain MVP
 }
