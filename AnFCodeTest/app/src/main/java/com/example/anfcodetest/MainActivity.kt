@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    loadCards(MainRepository())
+    loadCards()
 
 
   }
 
-  override fun loadCards(mainRepository: MainRepository) {
-    val cardList = mainRepository.fetchJson()
+  override fun loadCards() {
+    val cardList = MainRepository().fetchJson("https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
     runOnUiThread {
       recyclerView_main.layoutManager = LinearLayoutManager(this)
       recyclerView_main.recycledViewPool.setMaxRecycledViews(0,0)

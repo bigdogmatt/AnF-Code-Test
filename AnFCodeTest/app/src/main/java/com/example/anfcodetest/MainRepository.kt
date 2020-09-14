@@ -10,17 +10,19 @@ import okhttp3.OkHttpClient
 import okhttp3.Response
 import java.io.IOException
 
-var cardList: List<Card> = emptyList()
+
 
 //MODEL
 class MainRepository {
 
-    fun fetchJson(): List<Card> {
+
+    fun fetchJson(url: String): List<Card>{
         println("Attempting to fetch JSON file...")
 
         val client = OkHttpClient()
-        val cardRequest = CardRequest("https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
+        val cardRequest = CardRequest(url)
         val request = cardRequest.request
+        var cardList: List<Card> = emptyList()
 
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call, response: Response) {
@@ -30,7 +32,7 @@ class MainRepository {
                 //Parse Json
                 val mapper = jacksonObjectMapper()
                 cardList = mapper.readValue(body.toString())
-                cardList.forEach { println(it) }
+                //cardList.forEach { println(it) }
             }
 
             override fun onFailure(call: Call, e: IOException) {
