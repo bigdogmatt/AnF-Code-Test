@@ -1,11 +1,7 @@
 package com.example.anfcodetest
 
-import android.os.Build
 import android.os.Bundle
-import android.webkit.WebSettings
-import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.button_web_view.*
 

@@ -3,11 +3,8 @@ package com.example.anfcodetest
 import android.content.Intent
 import android.text.Html
 import android.text.method.LinkMovementMethod
-import android.view.View
 import android.view.View.GONE
-import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.card_row.view.*
 
 //PRESENTER
@@ -106,6 +103,5 @@ class MainPresenter : MainContract.Presenter {
     override fun detachView() {
         TODO("Not yet implemented")
     }
-
 
 }
