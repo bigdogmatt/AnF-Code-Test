@@ -16,28 +16,26 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     setContentView(R.layout.activity_main)
 
     loadCards()
-
-
   }
 
   override fun loadCards() {
-    fetchJson("https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
+    fetchJson()
     recyclerView_main.layoutManager = LinearLayoutManager(this)
     recyclerView_main.recycledViewPool.setMaxRecycledViews(0,0)
   }
 
-  override fun fetchJson(url: String) {
+  override fun fetchJson() {
     println("Attempting to fetch JSON file...")
 
     val client = OkHttpClient()
-    val cardRequest = CardRequest(url)
+    val cardRequest = CardRequest("https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
     val request = cardRequest.request
     var cardList: List<Card> = emptyList()
 
     client.newCall(request).enqueue(object: Callback {
       override fun onResponse(call: Call, response: Response) {
         val body = response.body?.string()
-        println(body)
+        //println(body)
 
         //Parse Json
         val mapper = jacksonObjectMapper()
