@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/CodeTestRepo.iml" filepath="$PROJECT_DIR$/.idea/CodeTestRepo.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AnFCodeTest.iml" filepath="$PROJECT_DIR$/.idea/modules/AnFCodeTest.iml" group="AnFCodeTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AnFCodeTest/app" />
+>>>>>>> ef613bfe6dd405be15a5a03c4f45fcbc46f6322a
     </modules>
   </component>
 </project>
