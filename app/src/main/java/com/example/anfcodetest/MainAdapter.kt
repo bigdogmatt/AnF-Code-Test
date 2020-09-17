@@ -5,7 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class MainAdapter(val cardList: List<Card>): RecyclerView.Adapter<CustomViewHolder>(){
+/**
+ * Created by Matt Kleman 09/04/20
+ */
+
+class MainAdapter(val cardList: List<Card>): RecyclerView.Adapter<CustomViewHolder>() {
 
     override fun getItemCount(): Int {
         return cardList.count()
@@ -19,11 +23,11 @@ class MainAdapter(val cardList: List<Card>): RecyclerView.Adapter<CustomViewHold
 
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        MainActivity().viewSetup(holder,position,cardList)
+        MainPresenter().cardSetup(holder, position, cardList)
+
     }
-
-
 }
+
 
 class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
