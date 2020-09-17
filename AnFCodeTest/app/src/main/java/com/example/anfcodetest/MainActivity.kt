@@ -8,7 +8,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
 
-//VIEW
+val url = "https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json"
+
 class MainActivity : AppCompatActivity(), MainContract.View {
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,16 +20,16 @@ class MainActivity : AppCompatActivity(), MainContract.View {
   }
 
   override fun loadCards() {
-    fetchJson()
+    fetchJson(url)
     recyclerView_main.layoutManager = LinearLayoutManager(this)
     recyclerView_main.recycledViewPool.setMaxRecycledViews(0,0)
   }
 
-  override fun fetchJson() {
+  override fun fetchJson(url: String) {
     println("Attempting to fetch JSON file...")
 
     val client = OkHttpClient()
-    val cardRequest = CardRequest("https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json")
+    val cardRequest = CardRequest(url)
     val request = cardRequest.request
     var cardList: List<Card> = emptyList()
 

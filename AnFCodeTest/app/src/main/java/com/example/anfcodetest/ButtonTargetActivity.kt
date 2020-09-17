@@ -7,12 +7,10 @@ import kotlinx.android.synthetic.main.button_web_view.*
 
 class ButtonTargetActivity : AppCompatActivity(), ButtonTargetContract.View {
 
-    //VIEW
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.button_web_view)
-
 
         //Change navigation bar title
         updateNavName()

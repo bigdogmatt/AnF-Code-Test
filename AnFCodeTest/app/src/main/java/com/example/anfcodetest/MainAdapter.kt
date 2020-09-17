@@ -29,7 +29,6 @@ class MainAdapter(val cardList: List<Card>): RecyclerView.Adapter<CustomViewHold
 }
 
 
-
 class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
 

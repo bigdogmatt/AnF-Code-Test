@@ -9,7 +9,7 @@ interface MainContract {
 
         //Loads the cards by fetching and parsing the Json
         fun loadCards()
-        fun fetchJson()
+        fun fetchJson(url: String)
     }
 
     interface Presenter : MvpPresenter<View> {

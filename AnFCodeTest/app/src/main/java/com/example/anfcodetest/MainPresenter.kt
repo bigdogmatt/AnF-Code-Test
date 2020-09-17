@@ -7,7 +7,7 @@ import android.view.View.GONE
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.card_row.view.*
 
-//PRESENTER
+
 class MainPresenter : MainContract.Presenter {
 
     override fun cardSetup(holder: CustomViewHolder, position: Int, cardList: List<Card>) {
