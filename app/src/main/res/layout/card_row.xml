@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/smallMargin"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/background_image_for_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:ignore="VectorDrawableCompat"
-        android:adjustViewBounds="true" />
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/topDescription"
@@ -60,6 +60,7 @@
         style="@style/buttonStyle"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/top_button"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/bottomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +71,7 @@
         style="@style/buttonStyle"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/bottom_button"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

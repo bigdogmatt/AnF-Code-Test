@@ -7,15 +7,23 @@ interface MainContract {
 
     interface View : MvpView {
 
-        //Loads the cards by fetching and parsing the Json
+        /**
+         * Begins the Json request and initializes the recycler views.
+         */
         fun loadCards()
-        fun fetchJson(url: String)
+
+        /**
+         * Displays the cards once the presenter loads them up by passing the list of cards to the
+         * recycler view adapter.
+         */
+        fun displayCards(cards: List<Card>)
     }
 
     interface Presenter : MvpPresenter<View> {
 
-        //Sets up the cards to be displayed by going through the card list and hiding unnecessary views
-        fun cardSetup(holder: CustomViewHolder, position: Int,cardList: List<Card>)
-
+        /**
+         * Initializes the JSON and displays the cards.
+         */
+        fun fetchJson(url: String)
     }
 }
