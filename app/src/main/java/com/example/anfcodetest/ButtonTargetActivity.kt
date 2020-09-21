@@ -18,15 +18,19 @@ class ButtonTargetActivity : AppCompatActivity(), ButtonTargetContract.View {
         //Get target link and load
         targetLoad()
     }
+
+    // since no external callers call this after MVP removal on ButtonTarget, it can be private.
     override fun updateNavName() {
         val navBarTitle = intent.getStringExtra("title")
         supportActionBar?.title = navBarTitle
     }
 
+    // since no external callers call this after MVP removal on ButtonTarget, it can be private.
     override fun targetLoad() {
         val targetLink = intent.getStringExtra("target")
         if (targetLink != null) {
             web_view_button_target.loadUrl(targetLink)
+            // I don't think the webViewClient needs set unless customization is needed.
             web_view_button_target.webViewClient = WebViewClient()
         }
     }
