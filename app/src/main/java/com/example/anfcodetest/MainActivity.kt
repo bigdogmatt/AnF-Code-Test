@@ -1,55 +1,36 @@
 package com.example.anfcodetest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.fasterxml.jackson.module.kotlin.*
+import com.hannesdorfmann.mosby3.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.*
-import java.io.IOException
 
-val url = "https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json"
-
-class MainActivity : AppCompatActivity(), MainContract.View {
+class MainActivity : MvpActivity<MainContract.View, MainContract.Presenter>(), MainContract.View {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-
     loadCards()
   }
 
-  override fun loadCards() {
-    fetchJson(url)
-    recyclerView_main.layoutManager = LinearLayoutManager(this)
-    recyclerView_main.recycledViewPool.setMaxRecycledViews(0,0)
+  override fun displayCards(cards: List<Card>) {
+    val adapter = MainAdapter(cards)
+    runOnUiThread {
+      recyclerView_main.adapter = adapter
+      adapter.notifyDataSetChanged()
+    }
   }
 
-  override fun fetchJson(url: String) {
-    println("Attempting to fetch JSON file...")
+  override fun loadCards() {
+    getPresenter().fetchJson(PAGE_DATA_URL)
+    recyclerView_main.layoutManager = LinearLayoutManager(this)
+    recyclerView_main.recycledViewPool.setMaxRecycledViews(0,0)
+    recyclerView_main.adapter = MainAdapter(emptyList())
+  }
 
-    val client = OkHttpClient()
-    val cardRequest = CardRequest(url)
-    val request = cardRequest.request
-    var cardList: List<Card> = emptyList()
+  override fun createPresenter(): MainContract.Presenter = MainPresenter()
 
-    client.newCall(request).enqueue(object: Callback {
-      override fun onResponse(call: Call, response: Response) {
-        val body = response.body?.string()
-        //println(body)
-
-        //Parse Json
-        val mapper = jacksonObjectMapper()
-        cardList = mapper.readValue(body.toString())
-        //cardList.forEach { println(it) }
-        runOnUiThread {
-          recyclerView_main.adapter = MainAdapter(cardList)
-        }
-      }
-
-      override fun onFailure(call: Call, e: IOException) {
-        println("Failed to execute")
-      }
-    })
+  private companion object {
+    private const val PAGE_DATA_URL = "https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.json"
   }
 }

@@ -5,27 +5,25 @@ import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.button_web_view.*
 
-class ButtonTargetActivity : AppCompatActivity(), ButtonTargetContract.View {
+class ButtonTargetActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.button_web_view)
-
-        //Change navigation bar title
         updateNavName()
-
-        //Get target link and load
         targetLoad()
     }
-    override fun updateNavName() {
-        val navBarTitle = intent.getStringExtra("title")
-        supportActionBar?.title = navBarTitle
+
+    private fun updateNavName() {
+        val navBarTitle = intent.getStringExtra("title").orEmpty()
+        if (navBarTitle.isNotEmpty()) {
+            supportActionBar?.title = navBarTitle
+        }
     }
 
-    override fun targetLoad() {
-        val targetLink = intent.getStringExtra("target")
-        if (targetLink != null) {
+    private fun targetLoad() {
+        val targetLink = intent.getStringExtra("target").orEmpty()
+        if (targetLink.isNotEmpty()) {
             web_view_button_target.loadUrl(targetLink)
             web_view_button_target.webViewClient = WebViewClient()
         }
